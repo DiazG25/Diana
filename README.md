@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diana 💖 ¿Quieres ser mi San Valentín?</title>
+  <title>Mi amor 💖 ¿Quieres ser mi San Valentín?</title>
   <style>
     body {
       margin: 0;
@@ -97,7 +97,7 @@
   <div class="bg-heart bg3">❤</div>
 
   <div class="card" id="card">
-    <h1 id="question">Diana 💕<br>¿Quieres ser mi San Valentín? 💘</h1>
+    <h1 id="question">Diana, mi amor verdadero 💕<br>¿Quieres ser mi San Valentín? 💘</h1>
     <button id="yes">Sí 💖</button>
     <button id="no">No 🙈</button>
   </div>
@@ -108,7 +108,7 @@
     const noBtn = document.getElementById('no');
 
     const noMessages = [
-      'Diana 🥺 ¿Estás segura?',
+      'Amor 🥺 ¿Estás segura?',
       'Piénsalo otra vez hermosa 💭💕',
       'Yo creo que sí quieres 😏💘',
       'No te puedes resistir 😍',
@@ -123,7 +123,7 @@
     });
 
     yesBtn.addEventListener('click', () => {
-      question.innerHTML = '¡Sabía que dirías que sí Diana! 💕🥰<br>Te amo muchísimo ❤️';
+      question.innerHTML = '¡Sabía que dirías que sí Mi amor! 💕🥰<br>Te amo muchísimo ❤️';
       noBtn.style.display = 'none';
       yesBtn.style.display = 'none';
       launchHearts();
