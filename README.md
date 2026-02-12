@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diana 💖 ¿Quieres ser mi San Valentín?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      text-align: center;
+      background-color: #ffb6c1;
+      background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+    }
+
+    .card {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      max-width: 340px;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 30px;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #adb5bd;
+      color: white;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 26px;
+      animation: floatUp 4s linear forwards;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-700px) scale(1.6);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1 id="question">Diana 💕<br>¿Quieres ser mi San Valentín? 💘</h1>
+    <button id="yes">Sí 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
+
+  <script>
+    const question = document.getElementById('question');
+    const yesBtn = document.getElementById('yes');
+    const noBtn = document.getElementById('no');
+
+    const noMessages = [
+      'Diana 🥺 ¿Estás segura?',
+      'Piénsalo otra vez hermosa 💭💕',
+      'Yo creo que sí quieres 😏💘',
+      'No te puedes resistir 😍',
+      'Inténtalo otra vez 💖'
+    ];
+
+    let noCount = 0;
+
+    noBtn.addEventListener('click', () => {
+      question.innerHTML = noMessages[noCount % noMessages.length];
+      noCount++;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      question.innerHTML = '¡Sabía que dirías que sí Diana! 💕🥰<br>Te amo muchísimo ❤️';
+      noBtn.style.display = 'none';
+      yesBtn.style.display = 'none';
+      launchHearts();
+    });
+
+    function launchHearts() {
+      for (let i = 0; i < 60; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.classList.add('heart');
+          heart.textContent = '❤️';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.bottom = '-20px';
+          document.body.appendChild(heart);
+
+          setTimeout(() => heart.remove(), 4000);
+        }, i * 80);
+      }
+    }
+  </script>
+</body>
+</html>
