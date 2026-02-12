@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -13,11 +14,26 @@
       font-family: 'Arial', sans-serif;
       overflow: hidden;
       text-align: center;
-      background-color: #ffb6c1;
-      background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+      background: linear-gradient(135deg, #ffb6d5, #ffc2e2);
+      position: relative;
     }
 
+    /* Corazones gigantes de fondo */
+    .bg-heart {
+      position: absolute;
+      font-size: 200px;
+      color: rgba(255, 105, 180, 0.15);
+      z-index: 0;
+      user-select: none;
+    }
+
+    .bg1 { top: 5%; left: 5%; }
+    .bg2 { bottom: 10%; right: 5%; }
+    .bg3 { top: 30%; right: 20%; font-size: 250px; }
+
     .card {
+      position: relative;
+      z-index: 1;
       background: white;
       padding: 35px 25px;
       border-radius: 25px;
@@ -74,6 +90,12 @@
   </style>
 </head>
 <body>
+
+  <!-- Corazones grandes de fondo -->
+  <div class="bg-heart bg1">❤</div>
+  <div class="bg-heart bg2">❤</div>
+  <div class="bg-heart bg3">❤</div>
+
   <div class="card" id="card">
     <h1 id="question">Diana 💕<br>¿Quieres ser mi San Valentín? 💘</h1>
     <button id="yes">Sí 💖</button>
